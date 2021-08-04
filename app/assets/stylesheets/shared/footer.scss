@@ -1,0 +1,38 @@
+
+/* //下部広告部分 */
+
+.footer {
+  width: 100vw;
+  padding: 5vh 0;
+  color: #FFF;
+  background-color: #333333;
+  text-align: center;
+}
+
+.footer-contents {
+  margin-bottom: 3vh;
+}
+
+.site-details {
+  display: flex;
+  justify-content: center;
+}
+
+.site-detail{
+  display: block;
+  padding: 0 4vw;
+}
+
+.footer-link {
+  color: #FFF;
+  font-size: 12px;
+}
+
+.site-logo {
+  height: 7vh;
+  margin-bottom: 3vh;
+}
+
+.footer>p {
+  font-size: 10px;
+}

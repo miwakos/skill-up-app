@@ -1,0 +1,128 @@
+* {
+  box-sizing: border-box;
+}
+
+.top-page-header {
+  width: 100vw;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0 auto;
+}
+
+.nav-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2vh 15vw;
+  background-color: #fff;
+}
+
+/* .nav-top-left {
+} */
+
+/* logoアイコン */
+.site-icon {
+  height: 7vh;
+  width: auto;
+  margin-right: 50px;
+}
+/* //logoアイコン */
+
+.nav-top-right {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+/* 検索バー */
+.search-form {
+  width: 60%;
+  height: 5vh;
+  display: flex;
+}
+
+.search-form>.input-box {
+  width: 100%;
+  height: 100%;
+  padding-left: 10px;
+  font-size: 14px;
+}
+
+.search-button {
+  border: 0;
+  cursor: pointer;
+  background-color: #333333;
+  padding: 8px;
+}
+
+.search-icon {
+  width: 100%;
+}
+/* //検索バー */
+
+/* ユーザーnav */
+.user-nav {
+  display: block;
+  display: flex;
+  min-width: 200px;
+  list-style: none;
+  align-items: center;
+  margin-left: 2vw;
+  font-size: 16px;
+}
+
+.user-nickname {
+  text-decoration: none;
+  color: #333333;
+  font-weight: bold;
+  margin-right: 2vw;
+}
+
+.logout {
+  text-decoration: none;
+  color: #333333;
+}
+
+.login {
+  text-decoration: none;
+  color: #333333;
+  margin-right: 2vw;
+}
+
+.sign-up {  
+  text-decoration: none;
+  color: #333333;
+}
+/* //ユーザーnav */
+
+
+/* ナビゲーション一覧 */
+.nav-bottom {
+  font-size: 16px;
+  background-color: #333333;
+  width: 100vw;
+  padding: 1vh 15vw;
+}
+
+.nav-lists {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 200px;
+}
+
+.nav-list {
+  padding: 0 2vw;
+  border-left: 0.5px solid #fff;
+  border-right: 0.5px solid #fff;
+}
+
+.nav-list-name {
+  text-decoration: none;
+  color: #fff;
+}
+/* //ナビゲーション一覧 */
