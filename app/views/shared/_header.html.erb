@@ -1,0 +1,47 @@
+<%# CSS・・・assets/stylesheets/shared/header.css %>
+<header class='top-page-header'>
+
+  <%# ヘッダー① %>
+  <div class='nav-top'>
+    <div class='nav-top-left'>
+      <%= link_to image_tag("skill-up-logo-x.png", class:"site-icon"), "/" %>
+    </div>
+
+    <div class='nav-top-right'>
+      <%= form_with(url: '#', local: true, method: :get, class: "search-form") do |f| %>
+        <%= f.text_field :keyword, placeholder: 'キーワードから探す', class: 'input-box' %>
+        <%= image_submit_tag("search.png" ,class: "search-button") %>
+      <% end %>
+      <ul class='user-nav'>
+        <%# if user_signed_in? %>
+          <%# <li> %>
+            <%#= link_to 'ユーザー名', '#', class: "user-nickname" %>
+          <%# </li> %>
+          <%# <li> %>
+            <%#= link_to 'ログアウト','#' , method: :delete, class: "logout" %>
+          <%# </li> %>
+        <%# else %>
+          <li><%= link_to 'ログイン','#' , class: "login" %></li>
+          <li><%= link_to '新規登録','#' , class: "sign-up" %></li>
+        <%# end %>
+      </ul>
+    </div>
+
+  </div>
+  <%# //ヘッダー① %>
+
+  <%# ヘッダー② %>
+  <div class='nav-bottom'>
+    <ul class='nav-lists'>
+      <li class='nav-list'><%= link_to '学習室', "#", class:"nav-list-name" %></li>
+      <li class='nav-list'><%= link_to '談話室', "#", class:"nav-list-name" %></li>
+      <li class='nav-list'><%= link_to '相談室', "#", class:"nav-list-name" %></li>
+      <li class='nav-list'><%= link_to 'アウトプット', "#", class:"nav-list-name" %></li>
+      <li class='nav-list'><%= link_to 'イベント掲示板', "#", class:"nav-list-name" %></li>
+      <li class='nav-list'><%= link_to '図書館', "#", class:"nav-list-name" %></li>
+      <li class='nav-list'><%= link_to 'ヘルプ', "#", class:"nav-list-name" %></li>
+    </ul>
+  </div>
+  <%# //ヘッダー② %>
+
+</header>
