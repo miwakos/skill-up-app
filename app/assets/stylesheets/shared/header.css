@@ -4,16 +4,17 @@
 
 .top-page-header {
   width: 100vw;
-  height: 120px;
+  height: 80px;
   display: flex;
   flex-direction: column;
   position: fixed;
   top: 0;
   left: 0;
   margin: 0 auto;
-}
+}  /* => メディア対応あり */
 
 .nav-top {
+  height: 48px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -36,7 +37,6 @@
   width: 60%;
   display: flex;
   align-items: center;
-  justify-content: right;
 }
 
 /* 検索バー */
@@ -106,23 +106,39 @@
   font-size: 16px;
   background-color: #333333;
   width: 100vw;
+  height: 32px;
   padding: 1vh 15vw;
-}
+}  /* => メディア対応あり */
+
+
 
 .nav-lists {
   display: flex;
   flex-wrap: wrap;
-  min-width: 200px;
+  border-left: 0.5px solid #fff;
 }
 
 .nav-list {
   padding: 0 2vw;
-  border-left: 0.5px solid #fff;
   border-right: 0.5px solid #fff;
-}
+}  /* => メディア対応あり */
 
 .nav-list-name {
   text-decoration: none;
   color: #fff;
 }
 /* //ナビゲーション一覧 */
+
+
+/* メディア対応 */
+@media (max-width: 1090px) { 
+  .top-page-header {
+    height: 112px;
+  }
+  .nav-bottom {
+    height: 64px;
+  }
+  .nav-list {
+    margin: 2px 0;
+  }
+}
