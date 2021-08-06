@@ -1,0 +1,86 @@
+<%= render "shared/second_header"%>
+
+<div class="back-img">
+  <div class="bkRGBA">
+  
+    <%= form_with model: @user_information, url: user_informations_path, class: 'registration-main', local: true do |f| %>
+    <div class='form-wrap'>
+      <div class='form-header'>
+        <h2 class='form-header-text'>
+          プロフィール情報登録
+        </h2>
+      </div>
+
+      <%= render 'shared/error_messages', model: f.object %>
+
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="user-img">プロフィール画像</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <div class='user-icons'>
+          <%= f.label :user_icon, { value: :male, class: 'user-icon' } do %>
+            <%= f.radio_button :user_icon, :male, class: 'radio_button', checked: true %>
+            <%= image_tag('user-icon-male.png', class: 'user-icon-img') %>
+          <% end %>
+          <%= f.label :user_icon, { value: :female, class: 'user-icon' } do %>
+            <%= f.radio_button :user_icon, :female, class: 'radio_button' %>
+            <%= image_tag('user-icon-female.png', class: 'user-icon-img') %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">ニックネーム</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_field :nickname, class:"input-default", id:"nickname", placeholder:"この名前がサイト内で表示されます", autofocus: true %>
+      </div>
+
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">生年月日</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <div class='input-birth-wrap'>
+          <%= raw sprintf(
+                      f.date_select(
+                        :birthday,
+                        class:'select-birth',
+                        id:"birth-date",
+                        use_month_numbers: true,
+                        prompt:'--',
+                        start_year: 1930,
+                        end_year: (Time.now.year - 5),
+                        date_separator: '%s'),
+                      "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">お住まい</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, { class:"input-default", id:"prefecture_id" }) %>
+      </div>
+      
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">自己紹介</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :user_introduction, class:"input-default", id:"user_introduction", placeholder:"自己紹介文を書きましょう！" %>
+      </div>
+      
+      <div class='register-btn'>
+        <%= f.submit "登録する" ,class:"register-red-btn" %>
+      </div>
+    </div>
+    <% end %>
+  
+  </div>
+</div
+>
+<%= render "shared/footer"%>
