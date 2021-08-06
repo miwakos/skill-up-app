@@ -14,7 +14,12 @@
       <% end %>
       <ul class='user-nav'>
         <% if user_signed_in? %>
-          <li><%= link_to 'ユーザー名', '#', class: "user-nickname" %></li>
+          <% if current_user.user_information.user_icon == 'male' %>
+            <%= image_tag('user-icon-male.png', class: 'user-icon--img') %>
+          <% elsif current_user.user_information.user_icon == 'female' %>
+            <%= image_tag('user-icon-female.png', class: 'user-icon--img') %>
+          <% end %>
+          <li><%= link_to current_user.user_information.nickname, '#', class: "user-nickname" %></li>
           <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
         <% else %>
           <li><%= link_to 'ログイン',new_user_session_path , class: "login" %></li>
