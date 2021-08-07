@@ -27,3 +27,26 @@
 
 - belongs_to :user
 - has_one :
+
+## categories テーブル
+
+| Column | Type   | Options     |
+| ------ | ------ | ----------- |
+| name   | string | null: false |
+
+### Association
+
+- has_many :lounges
+- belongs_to :
+- has_one :
+
+## lounges テーブル
+
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| category_id | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :category
+- has_one :

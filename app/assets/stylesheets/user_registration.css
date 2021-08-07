@@ -1,6 +1,6 @@
 /* new_user_session_path でも同じcssを使用 */
 
-.back-img {
+.back-img-urg {
   height: 100%;
   width: 100vw;
   margin-top: 80px;
@@ -189,7 +189,7 @@
 
 /* メディア対応 */
 @media (max-width: 1090px) { 
-  .back-img {
+  .back-img-urg {
     margin-top: 112px;
   }
 }

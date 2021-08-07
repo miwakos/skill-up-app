@@ -1,0 +1,35 @@
+.lounges-contents {
+  width: 80vw;
+  margin: 0 auto;
+  padding: 0 3vw;
+}
+
+.lounges-contents ul {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.lounge-content {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3px 10px;
+  margin: 10px 10px;
+  border: 1px solid #d3d3d3;
+  background-color: #fff;
+  text-align: center;
+  cursor: pointer;
+}
+
+.lounge-content:hover {
+  background-color: orange;
+}
+
+.lounge_icon {
+  width: 100px;
+  margin-bottom: 12px;
+}
+

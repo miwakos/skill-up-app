@@ -2,18 +2,33 @@ a {
   text-decoration: none;
 }
 
+.back-img-home {
+  height: 100%;
+  width: 100vw;
+  margin-top: 80px;
+  background-image: url("study-room-am-back-img.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+
+.bkRGBA {
+  height: 100%;
+  width: 100%;
+  background-color:rgba(255,255,255,0.5);
+  display: flex;
+  justify-content: center;
+}
+
 .main {
   height: 800px;
-  background: #f8f8f8;
 }
 
 .title-contents {
-  margin-top: 80px;
   width: 100vw;
-  background-image: image-url('furima-header01.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
+  // background-image: image-url('furima-header01.png');
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // background-position: top center;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -30,7 +45,7 @@ a {
 
 /* メディア対応 */
 @media (max-width: 1090px) { 
-  .title-contents {
+  .back-img-home {
     margin-top: 112px;
   }
 }
