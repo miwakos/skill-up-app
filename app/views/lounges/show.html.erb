@@ -1,0 +1,35 @@
+<%= render "shared/header" %>
+
+
+<div class='lounge-main'>
+
+
+  <div class='title-contents'>
+    <h2 class='service-title'>
+      <%= @lounge.category.name %>の談話室
+    </h2>
+  </div>
+
+  <div class='img-chat-cotents'>
+
+    <div class='lounge-img-contents'>
+      <%= image_tag('lounge-img-am.jpg', class: 'lounge-img') %>
+      <div class='seat-icon seat-no1'>空席</div>
+      <div class='seat-icon seat-no2'>空席</div>
+      <div class='seat-icon seat-no3'>空席</div>
+    </div>
+
+    <div class='chat-content'>
+      <div class='chat-log'>
+        チャットログ
+      </div>
+      <div class='chat-input'>
+        チャット入力欄
+      </div>
+    </div>
+  
+  </div>
+
+</div>
+
+<%= render "shared/footer" %>

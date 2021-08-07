@@ -33,3 +33,84 @@
   margin-bottom: 12px;
 }
 
+
+// 談話室詳細（show）
+.lounge-main {
+  height: 100%;
+  width: 100vw;
+  margin-top: 80px;
+  background-color: #d3d3d3;
+}
+
+.img-chat-cotents {
+  display: flex;
+  justify-content: center;
+}
+
+.lounge-img-contents {
+  width: 55vw;
+  min-width: 750px;
+  margin: 0 5vh 5vw;
+  position: relative;
+}
+
+.lounge-img {
+  width: 100%;
+}
+
+.seat-icon  {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  background-color: #fff;
+  background-color:rgba(255,255,255,0.8);
+  border-radius: 100px;
+  color: blue;
+  font-size: 18px;
+  text-align: center;
+  padding-top: 20px;
+  cursor: pointer;
+}
+
+.seat-icon:hover  {
+  background-color: orange;
+  color: #fff;
+}
+
+.seat-no1  {
+  top: 60%;
+  left: 20%;
+}
+
+.seat-no2  {
+  top: 38%;
+  left: 42%;
+}
+
+.seat-no3  {
+  top: 55%;
+  left: 75%;
+}
+
+.chat-content {
+  width: 30vw;
+  height: 69vh;
+  min-width: 250px;
+  margin: 0 5vh 5vw;
+  background-color: #fff;
+}
+
+/* メディア対応 */
+@media (max-width: 1090px) { 
+  .lounge-main {
+    margin-top: 112px;
+  }
+  .img-chat-cotents {
+    flex-direction: column;
+  }
+  .chat-content {
+    width: 55vw;
+    height: 200px;
+    min-width: 750px;
+  }
+}

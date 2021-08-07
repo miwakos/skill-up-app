@@ -5,6 +5,7 @@ class LoungesController < ApplicationController
   end
 
   def show
+    @lounge = Lounge.find(params[:id])
   end
 
 end
