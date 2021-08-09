@@ -10,12 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_07_002908) do
+ActiveRecord::Schema.define(version: 2021_08_07_124521) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "chat_entries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "lounge_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["lounge_id"], name: "index_chat_entries_on_lounge_id"
+    t.index ["user_id"], name: "index_chat_entries_on_user_id"
+  end
+
+  create_table "chat_messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "message", null: false
+    t.bigint "lounge_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["lounge_id"], name: "index_chat_messages_on_lounge_id"
+    t.index ["user_id"], name: "index_chat_messages_on_user_id"
   end
 
   create_table "lounges", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -49,6 +68,10 @@ ActiveRecord::Schema.define(version: 2021_08_07_002908) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "chat_entries", "lounges"
+  add_foreign_key "chat_entries", "users"
+  add_foreign_key "chat_messages", "lounges"
+  add_foreign_key "chat_messages", "users"
   add_foreign_key "lounges", "categories"
   add_foreign_key "user_informations", "users"
 end

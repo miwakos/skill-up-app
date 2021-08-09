@@ -6,6 +6,7 @@ class LoungesController < ApplicationController
 
   def show
     @lounge = Lounge.find(params[:id])
+    @chat_messages = ChatMessage.where(lounge_id: params[:id]).includes(:user)
   end
 
 end

@@ -58,18 +58,40 @@
   width: 100%;
 }
 
+.seat-content {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+}
+
+.seat-name {
+  width: 100%;
+  text-align: center;
+  background-color:rgba(255,255,255,0.8);
+  color: blue;
+  font-size: 14px;
+  visibility: hidden;  //クリック後削除
+}
+
 .seat-icon  {
   width: 70px;
   height: 70px;
-  position: absolute;
-  background-color: #fff;
   background-color:rgba(255,255,255,0.8);
   border-radius: 100px;
   color: blue;
   font-size: 18px;
   text-align: center;
-  padding-top: 20px;
+  padding-top: 20px;  //クリック後削除
+  margin: 10px 25px;
   cursor: pointer;
+}
+
+.seat-user-icon-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 100px;
+  background-color: orange;
+  visibility: hidden;    //クリック後削除
 }
 
 .seat-icon:hover  {
@@ -78,18 +100,18 @@
 }
 
 .seat-no1  {
-  top: 60%;
-  left: 20%;
+  top: 50%;
+  left: 15%;
 }
 
 .seat-no2  {
-  top: 38%;
-  left: 42%;
+  top: 33%;
+  left: 39%;
 }
 
 .seat-no3  {
-  top: 55%;
-  left: 75%;
+  top: 48%;
+  left: 70%;
 }
 
 .chat-content {
@@ -100,6 +122,56 @@
   background-color: #fff;
 }
 
+.chat-message-content {
+  width: 100%;
+  height: 85%;
+  padding: 2vh 1vw;
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.chat-messages {
+  width: 100%;
+  height: 100%;
+  padding: 0 2vw 0 0.5vw;
+  font-size: 12px;
+  overflow-y: scroll;
+}
+
+.chat-message {
+  width: 100%;
+  margin: 1vh 0;
+  display: flex;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.name {
+  width: 20%;
+}
+
+.message {
+  width: 80%;
+  padding-left: 0.5vw;
+}
+
+.my-chat {
+  color: blue;
+}
+
+.chat-input-content {
+  width: 100%;
+  height: 15%;
+  padding: 2vh 1vw;
+}
+
+.chat-input {
+  width: 90%;
+  height: 100%;
+  padding-left: 0.5vw;
+  font-size: 12px;
+}
+
+
 /* メディア対応 */
 @media (max-width: 1090px) { 
   .lounge-main {
@@ -109,8 +181,7 @@
     flex-direction: column;
   }
   .chat-content {
-    width: 55vw;
-    height: 200px;
-    min-width: 750px;
+    width: 90vw;
+    height: 300px;
   }
 }
