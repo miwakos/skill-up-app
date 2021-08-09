@@ -1,0 +1,187 @@
+.lounges-contents {
+  width: 80vw;
+  margin: 0 auto;
+  padding: 0 3vw;
+}
+
+.lounges-contents ul {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.lounge-content {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3px 10px;
+  margin: 10px 10px;
+  border: 1px solid #d3d3d3;
+  background-color: #fff;
+  text-align: center;
+  cursor: pointer;
+}
+
+.lounge-content:hover {
+  background-color: orange;
+}
+
+.lounge_icon {
+  width: 100px;
+  margin-bottom: 12px;
+}
+
+
+// 談話室詳細（show）
+.lounge-main {
+  height: 100%;
+  width: 100vw;
+  margin-top: 80px;
+  background-color: #d3d3d3;
+}
+
+.img-chat-cotents {
+  display: flex;
+  justify-content: center;
+}
+
+.lounge-img-contents {
+  width: 55vw;
+  min-width: 750px;
+  margin: 0 5vh 5vw;
+  position: relative;
+}
+
+.lounge-img {
+  width: 100%;
+}
+
+.seat-content {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+}
+
+.seat-name {
+  width: 100%;
+  text-align: center;
+  background-color:rgba(255,255,255,0.8);
+  color: blue;
+  font-size: 14px;
+  visibility: hidden;  //クリック後削除
+}
+
+.seat-icon  {
+  width: 70px;
+  height: 70px;
+  background-color:rgba(255,255,255,0.8);
+  border-radius: 100px;
+  color: blue;
+  font-size: 18px;
+  text-align: center;
+  padding-top: 20px;  //クリック後削除
+  margin: 10px 25px;
+  cursor: pointer;
+}
+
+.seat-user-icon-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 100px;
+  background-color: orange;
+  visibility: hidden;    //クリック後削除
+}
+
+.seat-icon:hover  {
+  background-color: orange;
+  color: #fff;
+}
+
+.seat-no1  {
+  top: 50%;
+  left: 15%;
+}
+
+.seat-no2  {
+  top: 33%;
+  left: 39%;
+}
+
+.seat-no3  {
+  top: 48%;
+  left: 70%;
+}
+
+.chat-content {
+  width: 30vw;
+  height: 69vh;
+  min-width: 250px;
+  margin: 0 5vh 5vw;
+  background-color: #fff;
+}
+
+.chat-message-content {
+  width: 100%;
+  height: 85%;
+  padding: 2vh 1vw;
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.chat-messages {
+  width: 100%;
+  height: 100%;
+  padding: 0 2vw 0 0.5vw;
+  font-size: 12px;
+  overflow-y: scroll;
+}
+
+.chat-message {
+  width: 100%;
+  margin: 1vh 0;
+  display: flex;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.name {
+  width: 20%;
+}
+
+.message {
+  width: 80%;
+  padding-left: 0.5vw;
+}
+
+.my-chat {
+  color: blue;
+}
+
+.chat-input-content {
+  width: 100%;
+  height: 15%;
+  padding: 2vh 1vw;
+}
+
+.chat-input {
+  width: 90%;
+  height: 100%;
+  padding-left: 0.5vw;
+  font-size: 12px;
+}
+
+
+/* メディア対応 */
+@media (max-width: 1090px) { 
+  .lounge-main {
+    margin-top: 112px;
+  }
+  .img-chat-cotents {
+    flex-direction: column;
+  }
+  .chat-content {
+    width: 90vw;
+    height: 300px;
+  }
+}

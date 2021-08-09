@@ -1,0 +1,68 @@
+<%= render "shared/header" %>
+
+
+<div class='lounge-main'>
+
+
+  <div class='title-contents'>
+    <h2 class='service-title'>
+      <%= @lounge.category.name %>の談話室
+    </h2>
+  </div>
+
+  <div class='img-chat-cotents'>
+
+    <div class='lounge-img-contents' id='lounge-img-contents'>
+
+      <%= image_tag('lounge-img-am.jpg', class: 'lounge-img') %>
+      <div class='seat-content seat-no1' id='seat-no1'>
+        <div class='seat-name' id='seat-name-no1'>名前</div>
+        <div class='seat-icon' id='seat-icon-no1'><p id='no-seat-no1'>空席</p>
+          <% if current_user.user_information.user_icon == 'male' %>
+            <%= image_tag('user-icon-male.png', class: 'seat-user-icon-img', id: 'seat-user-icon-img-no1') %>
+          <% elsif current_user.user_information.user_icon == 'female' %>
+            <%= image_tag('user-icon-female.png', class: 'seat-user-icon-img', id: 'seat-user-icon-img-no1') %>
+          <% end %>
+        </div>
+
+      </div>
+      <div class='seat-content seat-no2' id='seat-no2'>
+        <div class='seat-name' id='seat-name-no2'>名前</div>
+        <div class='seat-icon' id='seat-icon-no2'><p id='no-seat-no2'>空席</p>
+          <% if current_user.user_information.user_icon == 'male' %>
+              <%= image_tag('user-icon-male.png', class: 'seat-user-icon-img', id: 'seat-user-icon-img-no2') %>
+          <% elsif current_user.user_information.user_icon == 'female' %>
+            <%= image_tag('user-icon-female.png', class: 'seat-user-icon-img', id: 'seat-user-icon-img-no2') %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class='seat-content seat-no3' id='seat-no3'>
+        <div class='seat-name' id='seat-name-no3'>名前</div>
+        <div class='seat-icon' id='seat-icon-no3'><p id='no-seat-no3'>空席</p>
+          <% if current_user.user_information.user_icon == 'male' %>
+              <%= image_tag('user-icon-male.png', class: 'seat-user-icon-img', id: 'seat-user-icon-img-no3') %>
+          <% elsif current_user.user_information.user_icon == 'female' %>
+            <%= image_tag('user-icon-female.png', class: 'seat-user-icon-img', id: 'seat-user-icon-img-no3') %>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+
+    <div class='chat-content'>
+      <div class='chat-message-content'>
+        <div class='chat-messages', id='chat-messages'>
+          <%= render partial:"message", collection: @chat_messages %>
+        </div>
+      </div>
+      <div class='chat-input-content'>
+        <input type="text" data-behavior="lounge_speaker" data-user=<%= current_user.id %> data-lounge=<%= @lounge.id %> class="chat-input" id="chat-input" placeholder="メッセージを入力してください" autofocus="autofocus">
+      </div>
+    </div>
+  
+  </div>
+
+</div>
+
+<%= render "shared/footer" %>

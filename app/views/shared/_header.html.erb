@@ -19,7 +19,7 @@
           <% elsif current_user.user_information.user_icon == 'female' %>
             <%= image_tag('user-icon-female.png', class: 'user-icon--img') %>
           <% end %>
-          <li><%= link_to current_user.user_information.nickname, '#', class: "user-nickname" %></li>
+          <li><%= link_to current_user.user_information.nickname, '#', class: "user-nickname", id: "user-nickname" %></li>
           <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
         <% else %>
           <li><%= link_to 'ログイン',new_user_session_path , class: "login" %></li>
@@ -35,7 +35,7 @@
   <div class='nav-bottom'>
     <ul class='nav-lists'>
       <li class='nav-list'><%= link_to '学習室', "#", class:"nav-list-name" %></li>
-      <li class='nav-list'><%= link_to '談話室', "#", class:"nav-list-name" %></li>
+      <li class='nav-list'><%= link_to '談話室', lounges_path, class:"nav-list-name" %></li>
       <li class='nav-list'><%= link_to '相談室', "#", class:"nav-list-name" %></li>
       <li class='nav-list'><%= link_to 'アウトプット', "#", class:"nav-list-name" %></li>
       <li class='nav-list'><%= link_to 'イベント掲示板', "#", class:"nav-list-name" %></li>
