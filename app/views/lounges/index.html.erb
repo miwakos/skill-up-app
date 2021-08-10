@@ -17,7 +17,7 @@
             <li class='lounge-content'>
               <%= link_to lounge_path(lounge) do %>
                 <%= image_tag('lounge-icon.png', class:'lounge_icon') %>
-                <span><%= lounge.category.name %></span>
+                <%= lounge.category.name %>
               <% end %>
             </li>
           <% end %>
