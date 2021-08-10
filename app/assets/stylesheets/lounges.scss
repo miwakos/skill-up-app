@@ -1,3 +1,61 @@
+/* モーダルウィンドウ */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  z-index: 90;
+}
+
+.modal-window-enter {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 200px;
+  background-color: #dfdddd;
+  border-radius: 5px;
+  z-index: 91;
+  padding: 2rem;
+}
+
+.modal-window-exit {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 200px;
+  background-color: #dfdddd;
+  border-radius: 5px;
+  z-index: 91;
+  padding: 2rem;
+}
+
+.button-close {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 30px;
+  background-color: #ea5506;
+  color: #fff;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+
+
 .lounges-contents {
   width: 80vw;
   margin: 0 auto;
@@ -21,6 +79,7 @@
   border: 1px solid #d3d3d3;
   background-color: #fff;
   text-align: center;
+  border-radius: 15px;
   cursor: pointer;
 }
 
@@ -29,8 +88,8 @@
 }
 
 .lounge_icon {
-  width: 100px;
-  margin-bottom: 12px;
+  height: 70px;
+  margin-bottom: 8px;
 }
 
 
@@ -64,13 +123,43 @@
   position: absolute;
 }
 
+
+// 着席時のseatCSS
+.seat--name {
+  width: 100%;
+  text-align: center;
+  background-color:rgba(255,255,255,0.8);
+  color: blue;
+  font-size: 14px;
+}
+
+.seat--icon  {
+  width: 70px;
+  height: 70px;
+  background-color:rgba(255,255,255,0.8);
+  border-radius: 100px;
+  color: blue;
+  font-size: 18px;
+  text-align: center;
+  margin: 10px 25px;
+  cursor: pointer;
+}
+
+.seat-user-icon--img {
+  width: 70px;
+  height: 70px;
+  border-radius: 100px;
+  background-color: orange;
+}
+
+
+// 空席時のseatCSS
 .seat-name {
   width: 100%;
   text-align: center;
   background-color:rgba(255,255,255,0.8);
   color: blue;
   font-size: 14px;
-  visibility: hidden;  //クリック後削除
 }
 
 .seat-icon  {
@@ -81,9 +170,12 @@
   color: blue;
   font-size: 18px;
   text-align: center;
-  padding-top: 20px;  //クリック後削除
   margin: 10px 25px;
   cursor: pointer;
+}
+
+.no-seat-no {
+  padding-top: 20px;
 }
 
 .seat-user-icon-img {
@@ -91,7 +183,6 @@
   height: 70px;
   border-radius: 100px;
   background-color: orange;
-  visibility: hidden;    //クリック後削除
 }
 
 .seat-icon:hover  {
@@ -114,6 +205,8 @@
   left: 70%;
 }
 
+// チャットコンテンツ
+
 .chat-content {
   width: 30vw;
   height: 69vh;
@@ -122,9 +215,25 @@
   background-color: #fff;
 }
 
+.exit-btn-content {
+  width: 100%;
+  height: 10%;
+  padding: 1vh 1vw;
+}
+
+.lounge-exit-btn {
+  width: 120px;
+  height: 25px;
+  background-color: #ea5506;
+  color: #fff;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+}
+
 .chat-message-content {
   width: 100%;
-  height: 85%;
+  height: 75%;
   padding: 2vh 1vw;
   border-bottom: 1px solid #d3d3d3;
 }

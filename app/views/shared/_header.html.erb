@@ -15,9 +15,9 @@
       <ul class='user-nav'>
         <% if user_signed_in? %>
           <% if current_user.user_information.user_icon == 'male' %>
-            <%= image_tag('user-icon-male.png', class: 'user-icon--img') %>
+            <%= image_tag('user-icon-male.png', class: 'user-icon--img', id: 'user-icon--img') %>
           <% elsif current_user.user_information.user_icon == 'female' %>
-            <%= image_tag('user-icon-female.png', class: 'user-icon--img') %>
+            <%= image_tag('user-icon-female.png', class: 'user-icon--img', id: 'user-icon--img') %>
           <% end %>
           <li><%= link_to current_user.user_information.nickname, '#', class: "user-nickname", id: "user-nickname" %></li>
           <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>

@@ -1,8 +1,17 @@
+<%# モーダルウィンドウ %>
+<div id="overlay" class="overlay"></div>
+<div class="modal-window-enter">
+  <div>空席をクリックし、着席してから会話に参加してください。</div>
+  <button class="js-close button-close"  id="js-close">OK</button>
+</div>
+<div class="modal-window-exit">
+  <div>退出ボタンを押してください。</div>
+  <button class="js-close button-close"  id="js-close">OK</button>
+</div>
+
 <%= render "shared/header" %>
 
-
 <div class='lounge-main'>
-
 
   <div class='title-contents'>
     <h2 class='service-title'>
@@ -13,51 +22,90 @@
   <div class='img-chat-cotents'>
 
     <div class='lounge-img-contents' id='lounge-img-contents'>
-
       <%= image_tag('lounge-img-am.jpg', class: 'lounge-img') %>
-      <div class='seat-content seat-no1' id='seat-no1'>
-        <div class='seat-name' id='seat-name-no1'>名前</div>
-        <div class='seat-icon' id='seat-icon-no1'><p id='no-seat-no1'>空席</p>
-          <% if current_user.user_information.user_icon == 'male' %>
-            <%= image_tag('user-icon-male.png', class: 'seat-user-icon-img', id: 'seat-user-icon-img-no1') %>
-          <% elsif current_user.user_information.user_icon == 'female' %>
-            <%= image_tag('user-icon-female.png', class: 'seat-user-icon-img', id: 'seat-user-icon-img-no1') %>
-          <% end %>
-        </div>
 
+      <div class='seat-content seat-no1' id='seat-no1'>
+        <% if @chat_entry1.present? %>
+          <div class='seat-name' id='seat-name-no1'>
+            <%= @chat_entry1.user.user_information.nickname %>
+          </div>
+          <div class='seat-icon' id='seat-icon-no1'>
+            <p class='no-seat-no' id='no-seat-no1' style='display: none;'>空席</p>
+            <% if @chat_entry1.user.user_information.user_icon == 'male' %>
+              <img class="seat-user-icon-img" id="seat-user-icon-img-no1" src="user-icon-male.png">
+            <% else %>
+              <img class="seat-user-icon-img" id="seat-user-icon-img-no1" src="user-icon-female.png">
+            <% end %>
+          </div>
+        <% else %>
+          <div class='seat-name' id='seat-name-no1' style='visibility: hidden;'>
+          </div>
+          <div class='seat-icon' id='seat-icon-no1'>
+            <p class='no-seat-no' id='no-seat-no1'>空席</p>
+            <img class="seat-user-icon-img" id="seat-user-icon-img-no1" style='visibility: hidden;'>
+          </div>
+        <% end %>
       </div>
+
       <div class='seat-content seat-no2' id='seat-no2'>
-        <div class='seat-name' id='seat-name-no2'>名前</div>
-        <div class='seat-icon' id='seat-icon-no2'><p id='no-seat-no2'>空席</p>
-          <% if current_user.user_information.user_icon == 'male' %>
-              <%= image_tag('user-icon-male.png', class: 'seat-user-icon-img', id: 'seat-user-icon-img-no2') %>
-          <% elsif current_user.user_information.user_icon == 'female' %>
-            <%= image_tag('user-icon-female.png', class: 'seat-user-icon-img', id: 'seat-user-icon-img-no2') %>
-          <% end %>
-        </div>
+        <% if @chat_entry2.present? %>
+          <div class='seat-name' id='seat-name-no2'>
+            <%= @chat_entry2.user.user_information.nickname %>
+          </div>
+          <div class='seat-icon' id='seat-icon-no2'>
+            <p class='no-seat-no' id='no-seat-no2' style='display: none;'>空席</p>
+            <% if @chat_entry2.user.user_information.user_icon == 'male' %>
+              <img class="seat-user-icon-img" id="seat-user-icon-img-no2" src="user-icon-male.png">
+            <% else %>
+              <img class="seat-user-icon-img" id="seat-user-icon-img-no2" src="user-icon-female.png">
+            <% end %>
+          </div>
+        <% else %>
+          <div class='seat-name' id='seat-name-no2' style='visibility: hidden;'>
+          </div>
+          <div class='seat-icon' id='seat-icon-no2'>
+            <p class='no-seat-no' id='no-seat-no2'>空席</p>
+            <img class="seat-user-icon-img" id="seat-user-icon-img-no2" style='visibility: hidden;'>
+          </div>
+        <% end %>
       </div>
 
       <div class='seat-content seat-no3' id='seat-no3'>
-        <div class='seat-name' id='seat-name-no3'>名前</div>
-        <div class='seat-icon' id='seat-icon-no3'><p id='no-seat-no3'>空席</p>
-          <% if current_user.user_information.user_icon == 'male' %>
-              <%= image_tag('user-icon-male.png', class: 'seat-user-icon-img', id: 'seat-user-icon-img-no3') %>
-          <% elsif current_user.user_information.user_icon == 'female' %>
-            <%= image_tag('user-icon-female.png', class: 'seat-user-icon-img', id: 'seat-user-icon-img-no3') %>
-          <% end %>
-        </div>
+        <% if @chat_entry3.present? %>
+          <div class='seat-name' id='seat-name-no3'>
+            <%= @chat_entry3.user.user_information.nickname %>
+          </div>
+          <div class='seat-icon' id='seat-icon-no3'>
+            <p class='no-seat-no' id='no-seat-no3' style='display: none;'>空席</p>
+            <% if @chat_entry3.user.user_information.user_icon == 'male' %>
+              <img class="seat-user-icon-img" id="seat-user-icon-img-no3" src="user-icon-male.png">
+            <% else %>
+              <img class="seat-user-icon-img" id="seat-user-icon-img-no3" src="user-icon-female.png">
+            <% end %>
+          </div>
+        <% else %>
+          <div class='seat-name' id='seat-name-no3' style='visibility: hidden;'>
+          </div>
+          <div class='seat-icon' id='seat-icon-no3'>
+            <p class='no-seat-no' id='no-seat-no3'>空席</p>
+            <img class="seat-user-icon-img" id="seat-user-icon-img-no3" style='visibility: hidden;'>
+          </div>
+        <% end %>
       </div>
 
     </div>
 
     <div class='chat-content'>
+      <div class='exit-btn-content'>
+        <button class="lounge-exit-btn" id="lounge-exit-btn">退出する</button>
+      </div>
       <div class='chat-message-content'>
         <div class='chat-messages', id='chat-messages'>
           <%= render partial:"message", collection: @chat_messages %>
         </div>
       </div>
       <div class='chat-input-content'>
-        <input type="text" data-behavior="lounge_speaker" data-user=<%= current_user.id %> data-lounge=<%= @lounge.id %> class="chat-input" id="chat-input" placeholder="メッセージを入力してください" autofocus="autofocus">
+        <input type="text" data-behavior="lounge_speaker" data-user=<%= current_user.id %> data-lounge=<%= @lounge.id %> data-lounge=<%= @lounge.id %> class="chat-input" id="chat-input" placeholder="メッセージを入力してください" autofocus="autofocus">
       </div>
     </div>
   
