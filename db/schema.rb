@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2021_08_07_124521) do
   create_table "chat_entries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "lounge_id", null: false
     t.bigint "user_id", null: false
+    t.integer "seat_no", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["lounge_id"], name: "index_chat_entries_on_lounge_id"
