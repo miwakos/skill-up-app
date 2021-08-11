@@ -1,3 +1,43 @@
+// タイトル部 index
+.title-contents-flex {
+  width: 100vw;
+  height: 10%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 5vh 15vw;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+}
+
+.title-contents-left {
+  width: 80%;
+}
+
+.title-contents-right {
+  width: 20%;
+}
+
+.create-btn-content {
+  width: 100%;
+  height: 10%;
+  padding: 1vh 1vw;
+}
+
+.create-btn {
+  width: 150px;
+  height: 50px;
+  padding: 5px 0;
+  text-align: center;
+  background-color: #ea5506;
+  box-shadow:5px 5px 10px #696969;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+// 投稿一覧 index
 .back-img-library {
   width: 100vw;
   height: 800px;
@@ -9,21 +49,26 @@
 
 .book-contents {
   width: 100%;
-  height: 100%;
+  height: 90%;
+  min-height: 90%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 5vh 15vw;
   margin: 0;
+  flex-wrap: wrap;
+  overflow-y: scroll;
 }
 
 .book-content {
   width: 450px;
   min-width: 450px;
   height: 250px;
+  min-height: 250px;
   margin: 0 30px 20px 0;
   padding: 15px 20px;
-  background-color: #FFF;
+  background-color: rgba(255,255,255,0.8);;
   border-radius: 15px;
+  box-shadow: 5px 5px 10px #696969;
 }
 
 .book-post-user-name{
@@ -105,10 +150,28 @@
 }
 
 
+// 新規登録 new
+.book-form-wrap {
+  // height: 750px;
+  overflow-y: scroll;
+}
+
+.input-default#book_introduction {
+  height: 150px;
+  padding-top: 5px;
+}
+
 
 /* メディア対応 */
 @media (max-width: 1090px) { 
+  .back-img-library {
+    margin-top: 112px;
+  }
   .book-contents {
     flex-direction: column;
+    justify-content: start;
+  }
+  .book-content {
+    margin: 0 0 20px 0;
   }
 }

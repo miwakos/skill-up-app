@@ -90,7 +90,7 @@
 | ----------------- | ---------- | ------------------------------ |
 | book_title        | text       | null: false                    |
 | author            | string     | null: false                    |
-| published_date    | date       |                                |
+| published_date    | string     |                                |
 | book_introduction | text       | null: false                    |
 | user_id           | references | null: false, foreign_key: true |
 | category_id       | references | null: false, foreign_key: true |

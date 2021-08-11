@@ -5,58 +5,71 @@
     <div class='main'>
 
 
-      <div class='title-contents'>
-        <h2 class='service-title'>
-          図書館
-        </h2>
+      <div class='title-contents-flex'>
+        <div class="title-contents-left">
+          <h2 class='service-title'>
+            図書館
+          </h2>
+        </div>
+        <div class="title-contents-right">
+          <div class='create-btn-content'>
+            <%= link_to new_book_path, cass: 'create-btn', id: "create-btn" do %>
+                <div class="create-btn">新しく図書カードに<br>記録する</div>
+            <% end %>
+          </div>
+        </div>
       </div>
 
 
       <ul class='book-contents'>
-          <li class='book-content'>
-            <%= link_to '#', cass: "book-post-user-link" do %>
-              <div class="book-post-user-name">
-                <span>テストさん</span>の図書カードより
-              </div>
-            <% end %>
-            <div class="book-content-center">
-              <div class="book-content-left">
-                <div class="book-img-content">
-                  <%= image_tag('sample-book.jpg', class: 'book-img') %>
+
+          <% 5.times do %> <%# サンプル投稿表示用 %>
+            <li class='book-content'>
+              <%= link_to '#', cass: "book-post-user-link" do %>
+                <div class="book-post-user-name">
+                  ［8/13 10:00］<span>テストさん</span>の図書カードより
+                </div>
+              <% end %>
+              <div class="book-content-center">
+                <div class="book-content-left">
+                  <div class="book-img-content">
+                    <%= image_tag('sample-book.jpg', class: 'book-img') %>
+                  </div>
+                </div>
+                <div class="book-content-right">
+                  <div class="book-title">嫌われる勇気</div>
+                  <div class="book-author">岸見一郎、古賀史健</div>
+                  <div class="book-introduction">本書は、フロイト、ユングと並び「心理学の三大巨頭」と称される、アルフレッド・アドラーの思想(アドラー心理学)を、「青年と哲人の対話篇」という物語形式を用いてまとめた一冊です。欧米で絶大な支持を誇るアドラー心理学は、「どうすれば人は幸せに生きることができるか」という哲学的な問いに、きわめてシンプルかつ具体的な“答え”を提示します。</div>
                 </div>
               </div>
-              <div class="book-content-right">
-                <div class="book-title">嫌われる勇気</div>
-                <div class="book-author">岸見一郎、古賀史健</div>
-                <div class="book-introduction">本書は、フロイト、ユングと並び「心理学の三大巨頭」と称される、アルフレッド・アドラーの思想(アドラー心理学)を、「青年と哲人の対話篇」という物語形式を用いてまとめた一冊です。欧米で絶大な支持を誇るアドラー心理学は、「どうすれば人は幸せに生きることができるか」という哲学的な問いに、きわめてシンプルかつ具体的な“答え”を提示します。</div>
-              </div>
-            </div>
-            <%= link_to '#', cass: 'book-content-link' do %>
-              <div class="read-more">もっとみる ></div>
-            <% end %>
-          </li>
-          <li class='book-content'>
-            <%= link_to '#', cass: "book-post-user-link" do %>
-              <div class="book-post-user-name">
-                <span>テストさん</span>の図書カードより
-              </div>
-            <% end %>
-            <div class="book-content-center">
-              <div class="book-content-left">
-                <div class="book-img-content">
-                  <%= image_tag('sample-book.jpg', class: 'book-img') %>
+              <%= link_to '#', cass: 'book-content-link' do %>
+                <div class="read-more">もっとみる ></div>
+              <% end %>
+            </li>
+
+            <li class='book-content'>
+              <%= link_to '#', cass: "book-post-user-link" do %>
+                <div class="book-post-user-name">
+                  ［8/13 10:00］<span>テストさん</span>の図書カードより
+                </div>
+              <% end %>
+              <div class="book-content-center">
+                <div class="book-content-left">
+                  <div class="book-img-content">
+                    <%= image_tag('sample-book.jpg', class: 'book-img') %>
+                  </div>
+                </div>
+                <div class="book-content-right">
+                  <div class="book-title">嫌われる勇気 あああああああああああああああああああああああああああああああああああ</div>
+                  <div class="book-author">岸見一郎、古賀史健、あああああああああああああああああああ</div>
+                  <div class="book-introduction">本書は、フロイト、ユングと並び「心理学の三大巨頭」と称される、アルフレッド・アドラーの思想(アドラー心理学)を、「青年と哲人の対話篇」という物語形式を用いてまとめた一冊です。欧米で絶大な支持を誇るアドラー心理学は、「どうすれば人は幸せに生きることができるか」という哲学的な問いに、きわめてシンプルかつ具体的な“答え”を提示します。</div>
                 </div>
               </div>
-              <div class="book-content-right">
-                <div class="book-title">嫌われる勇気 あああああああああああああああああああああああああああああああああああ</div>
-                <div class="book-author">岸見一郎、古賀史健、あああああああああああああああああああ</div>
-                <div class="book-introduction">本書は、フロイト、ユングと並び「心理学の三大巨頭」と称される、アルフレッド・アドラーの思想(アドラー心理学)を、「青年と哲人の対話篇」という物語形式を用いてまとめた一冊です。欧米で絶大な支持を誇るアドラー心理学は、「どうすれば人は幸せに生きることができるか」という哲学的な問いに、きわめてシンプルかつ具体的な“答え”を提示します。</div>
-              </div>
-            </div>
-            <%= link_to '#', cass: 'book-content-link' do %>
-              <div class="read-more">もっとみる ></div>
-            <% end %>
-          </li>
+              <%= link_to '#', cass: 'book-content-link' do %>
+                <div class="read-more">もっとみる ></div>
+              <% end %>
+            </li>
+          <% end %> <%# サンプル投稿表示用 %>
       </ul>
 
 
