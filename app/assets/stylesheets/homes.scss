@@ -22,14 +22,11 @@ a {
 .main {
   width: 100%;
   height: 100%;
+  z-index: 70;
 }
 
 .title-contents {
   width: 100vw;
-  // background-image: image-url('furima-header01.png');
-  // background-size: cover;
-  // background-repeat: no-repeat;
-  // background-position: top center;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -40,7 +37,7 @@ a {
 }
 
 .service-title {
-  font-size: 5vh;
+  font-size: 28px;
 }
 
 

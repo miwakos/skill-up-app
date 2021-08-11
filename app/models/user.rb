@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_one  :user_information, dependent: :destroy
   has_many :chat_messages, dependent: :destroy
-  has_one :lounge, through: :chat_entry
+  has_one  :lounge, through: :chat_entry
+  has_many :books, dependent: :nullify
 
 end

@@ -1,4 +1,5 @@
 class LoungesController < ApplicationController
+  before_action :authenticate_user!, only: [:index, :create, :show, :destroy]
 
   def index
     @lounges = Lounge.all

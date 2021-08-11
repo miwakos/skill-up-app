@@ -11,7 +11,8 @@
 
 - has_one  :user_information, dependent: :destroy
 - has_many :chat_messages, dependent: :destroy
-- has_one :lounge, through: :chat_entry
+- has_one  :lounge, through: :chat_entry
+- has_many :books, dependent: :nullify
 
 
 ## user_informations テーブル
@@ -40,6 +41,7 @@
 ### Association
 
 - has_many :lounges
+- has_many :books
 
 
 ## lounges テーブル
@@ -81,3 +83,19 @@
 
 - belongs_to :lounge
 - belongs_to :user
+
+## books テーブル
+
+| Column            | Type       | Options                        |
+| ----------------- | ---------- | ------------------------------ |
+| book_title        | text       | null: false                    |
+| author            | string     | null: false                    |
+| published_date    | string     |                                |
+| book_introduction | text       | null: false                    |
+| user_id           | references | null: false, foreign_key: true |
+| category_id       | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :category
+- belongs_to :user, optional: true

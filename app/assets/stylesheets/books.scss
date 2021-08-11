@@ -1,0 +1,177 @@
+// タイトル部 index
+.title-contents-flex {
+  width: 100vw;
+  height: 10%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 5vh 15vw;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+}
+
+.title-contents-left {
+  width: 80%;
+}
+
+.title-contents-right {
+  width: 20%;
+}
+
+.create-btn-content {
+  width: 100%;
+  height: 10%;
+  padding: 1vh 1vw;
+}
+
+.create-btn {
+  width: 150px;
+  height: 50px;
+  padding: 5px 0;
+  text-align: center;
+  background-color: #ea5506;
+  box-shadow:5px 5px 10px #696969;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+// 投稿一覧 index
+.back-img-library {
+  width: 100vw;
+  height: 800px;
+  margin-top: 80px;
+  background-image: url("library-am-back-img.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+
+.book-contents {
+  width: 100%;
+  height: 90%;
+  min-height: 90%;
+  display: flex;
+  justify-content: space-between;
+  padding: 5vh 15vw;
+  margin: 0;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+}
+
+.book-content {
+  width: 450px;
+  min-width: 450px;
+  height: 250px;
+  min-height: 250px;
+  margin: 0 30px 20px 0;
+  padding: 15px 20px;
+  background-color: rgba(255,255,255,0.8);;
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px #696969;
+}
+
+.book-post-user-name{
+  height: 10%;
+  padding-bottom: 2px;
+  font-size: 12px;
+}
+.book-post-user-name span {
+  color: blue;
+  text-decoration: underline;
+}
+
+.book-content-center {
+  height: 80%;
+  display: flex;
+}
+
+.book-content-left {
+  width: 25%;
+}
+
+.book-content-right {
+  width: 75%;
+}
+
+.book-img-content {
+  width: 100%;
+  padding-top: 12px;
+}
+
+.book-img {
+  width: 80%;
+}
+
+.book-title {
+  height: 20%;
+  padding-top: 8px;
+  display: flex;
+  align-items: flex-end;
+  border-bottom: 1px solid #d3d3d3;
+  box-shadow: 0px 5px 5px -5px #696969;
+  font-size: 16px;
+  // はみ出た部分は3点リーダー（行数指定）
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.book-author {
+  height: 15%;
+  padding-top: 8px;
+  border-bottom: 1px solid #d3d3d3;
+  font-size: 12px;
+  // はみ出た部分は3点リーダー（行数指定）
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.book-introduction {
+  height: 60%;
+  padding-top: 12px;
+  font-size: 12px;
+  // はみ出た部分は3点リーダー（行数指定）
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.read-more {
+  height: 10%;
+  font-size: 12px;
+  color: blue;
+  text-align: right;
+  text-decoration: underline;
+}
+
+
+// 新規登録 new
+.book-form-wrap {
+  // height: 750px;
+  overflow-y: scroll;
+}
+
+.input-default#book_introduction {
+  height: 150px;
+  padding-top: 5px;
+}
+
+
+/* メディア対応 */
+@media (max-width: 1090px) { 
+  .back-img-library {
+    margin-top: 112px;
+  }
+  .book-contents {
+    flex-direction: column;
+    justify-content: start;
+  }
+  .book-content {
+    margin: 0 0 20px 0;
+  }
+}

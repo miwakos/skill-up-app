@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_07_124521) do
+ActiveRecord::Schema.define(version: 2021_08_10_235016) do
+
+  create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "book_title", null: false
+    t.string "author", null: false
+    t.string "published_date"
+    t.text "book_introduction", null: false
+    t.bigint "user_id", null: false
+    t.bigint "category_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_books_on_category_id"
+    t.index ["user_id"], name: "index_books_on_user_id"
+  end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -69,6 +82,8 @@ ActiveRecord::Schema.define(version: 2021_08_07_124521) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "books", "categories"
+  add_foreign_key "books", "users"
   add_foreign_key "chat_entries", "lounges"
   add_foreign_key "chat_entries", "users"
   add_foreign_key "chat_messages", "lounges"

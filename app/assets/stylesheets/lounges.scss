@@ -53,9 +53,7 @@
 }
 
 
-
-
-
+// ラウンジ一覧 index
 .lounges-contents {
   width: 80vw;
   margin: 0 auto;
@@ -84,7 +82,7 @@ a {
   border: 1px solid #d3d3d3;
   border-radius: 15px;
   box-shadow:5px 5px 10px #696969;
-  background-color: #fff;
+  background-color: rgba(255,255,255,0.8);
   text-align: center;
   text-shadow: 1px 1.5px 2px #d3d3d3;
   list-style: none;
@@ -234,7 +232,7 @@ a {
   height: 25px;
   background-color: #ea5506;
   color: #fff;
-  border-radius: 15px;
+  border-radius: 10px;
   border: none;
   cursor: pointer;
 }
