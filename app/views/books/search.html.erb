@@ -5,8 +5,7 @@
 
       <%# 外部検索フォーム %>
       <div class="book-search-form">
-        <%#= form_with(url: search_books_path, local: true, method: :get, class: 'book-registration-sub', id: 'book-registration-sub') do |f| %>
-        <div class="book-registration-sub">
+        <%= form_with(url: search_books_path, local: true, method: :get, class: 'book-registration-sub') do |f| %>
           <div class='book-form-wrap-search'>
             <div class='form-header'>
               <h2 class='form-header-text'>
@@ -19,17 +18,14 @@
                 <label class="form-text">キーワード</label>
                 <span class="indispensable">必須</span>
               </div>
-              <%#= f.text_field :keyword, class:"input-default", id:"search_keyword", placeholder:"書籍名を入力してください" %>
-              <input type="text" name="keyword", class="input-default", id="search_keyword", placeholder="書籍名を入力してください">
+              <%= f.text_field :keyword, class:"input-default", id:"book_title", placeholder:"書籍名を入力してください", autofocus: true %>
             </div>
             
             <div class='register-btn'>
-              <input type="submit" name="commit" valuse="検索する" class="book-search-btn" id="book-search-btn" data-disable-with="検索する">
-              <%#= f.submit "検索する" ,class:"book-search-btn", id:"book-search-btn" %>
+              <%= f.submit "検索する" ,class:"book-search-btn" %>
             </div>
           </div>
-        </div>
-        <%# end %>
+        <% end %>
 
         <div class="book-registration-sub">
           <div class='book-form-wrap-search'>

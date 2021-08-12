@@ -150,7 +150,63 @@
 }
 
 
-// 新規登録 new
+// 外部検索、新規登録 new
+.bkRGBA-flex {
+  width: 100%;
+  // height: 100%;
+  padding: 0 10vw;
+  background-color:rgba(255,255,255,0.5);
+  display: flex;
+  justify-content: space-around;
+}
+
+.book-search-form {
+  width: 40%;
+  min-width: 350px;
+  // height: 750px;
+}
+// 外部検索
+.book-registration-sub {
+  width: 100%;
+  padding-top: 5vh;
+  display: flex;
+  justify-content: center;
+}
+
+.book-form-wrap-search {
+  width: 100%;
+  background-color: white;
+  background-color:rgba(255,255,255,0.8);
+  border-radius: 5px;
+  padding: 20px 0 70px 0;
+}
+
+.book-search-btn {
+  width: 100%;
+  background: #233B6C;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.search-results {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.search-result {
+  margin-top: 10px;
+  padding: 2px 5px;
+  border: 1px solid #d3d3d3;
+  font-size: 12px;
+}
+
 .book-form-wrap {
   // height: 750px;
   overflow-y: scroll;
@@ -171,7 +227,11 @@
     flex-direction: column;
     justify-content: start;
   }
-  .book-content {
-    margin: 0 0 20px 0;
+  .bkRGBA-flex {
+    margin-top: 112px;
+    flex-direction: column;
+    padding: 0 25vw;
+    // justify-content: center;
+    overflow-y: scroll;
   }
 }

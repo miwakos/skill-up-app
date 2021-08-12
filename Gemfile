@@ -57,4 +57,6 @@ gem 'devise'
 gem 'active_hash'
 gem 'jquery-rails'
 
+gem 'rakuten_web_service'
+
 gem 'pry-rails'

@@ -17,6 +17,15 @@ class BooksController < ApplicationController
     end
   end
 
+  def search
+    if params[:keyword]
+      # @books = RakutenWebService::Books::Book.search(title: params[:keyword])
+      # render :new
+      @books = RakutenWebService::Books::Book.search(booksGenreId: "001005")
+      # render json: { status: 'success', data: @books }  
+    end
+  end
+
   private
 
   def book_params
