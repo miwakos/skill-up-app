@@ -8,6 +8,7 @@ require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("../chat_scroll")
 require("../lounge_seat")
+require("../rws")
 require("channels")
 
 

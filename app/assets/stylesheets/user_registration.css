@@ -9,14 +9,6 @@
   background-position: center center;
 }
 
-.bkRGBA {
-  height: 100%;
-  width: 100%;
-  background-color:rgba(255,255,255,0.5);
-  display: flex;
-  justify-content: center;
-}
-
 .registration-main {
   width: 40%;
   min-width: 350px;
@@ -30,6 +22,7 @@
   width: 100%;
   background-color: white;
   background-color:rgba(255,255,255,0.8);
+  border-radius: 5px;
   padding: 20px 0 70px 0;
 }
 
@@ -129,6 +122,7 @@
   width: 100%;
   background: rgb(223,86,86);
   border: none;
+  border-radius: 5px;
   color: #fff;
   line-height: 48px;
   font-size: 14px;

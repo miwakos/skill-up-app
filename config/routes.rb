@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   resources :lounges, only: [:index, :show, :destroy] do
     resources :chat_messages, only: [:create]
   end
-  resources :books, only: [:index, :show, :new, :create, :destroy]
+  resources :books, only: [:index, :show, :new, :create, :destroy] do
+    collection do
+      get 'search'
+    end
+  end
   
 end
