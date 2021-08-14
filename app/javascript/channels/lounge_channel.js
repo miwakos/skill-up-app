@@ -73,8 +73,8 @@ const appLounge = consumer.subscriptions.create("LoungeChannel", {
       else if (data['user_nickname'] == seatName2.innerHTML) {
         const noSeat = document.getElementById('no-seat-no2');
         const seatUserIconImg = document.getElementById('seat-user-icon-img-no2');
-        seatName1.innerHTML = ''
-        seatName1.setAttribute('style', 'visibility: hidden;');
+        seatName2.innerHTML = ''
+        seatName2.setAttribute('style', 'visibility: hidden;');
         noSeat.removeAttribute('style');
         seatUserIconImg.removeAttribute('src');
         seatUserIconImg.setAttribute('style', 'visibility: hidden;');
@@ -83,8 +83,8 @@ const appLounge = consumer.subscriptions.create("LoungeChannel", {
       else if (data['user_nickname'] == seatName3.innerHTML) {
         const noSeat = document.getElementById('no-seat-no3');
         const seatUserIconImg = document.getElementById('seat-user-icon-img-no3');
-        seatName1.innerHTML = ''
-        seatName1.setAttribute('style', 'visibility: hidden;');
+        seatName3.innerHTML = ''
+        seatName3.setAttribute('style', 'visibility: hidden;');
         noSeat.removeAttribute('style');
         seatUserIconImg.removeAttribute('src');
         seatUserIconImg.setAttribute('style', 'visibility: hidden;');
