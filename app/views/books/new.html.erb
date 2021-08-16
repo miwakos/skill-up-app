@@ -59,7 +59,7 @@
 
       <%# 新規投稿フォーム %>
       <div class="book-search-form-right">
-        <%= form_with model: @book, url: books_path, class: 'book-registration-sub', local: true do |f| %>
+        <%= form_with model: @book, url: books_path, class: 'book-registration-sub book-registration-form', local: true do |f| %>
           <div class='form-wrap book-form-wrap'>
             <div class='form-header'>
               <h2 class='form-header-text'>
@@ -69,13 +69,13 @@
 
             <%= render 'shared/error_messages', model: f.object %>
             
-            <%# <div class="form-group">  
+            <div class="form-group">  
               <div class='form-text-wrap'>
                 <label class="form-text">書籍画像</label>
                 <span class="indispensable">必須</span>
               </div>
-              <%= f.text_field :book_img, class:"input-default", id:"book_img", placeholder:"", autofocus: true %>
-            <%# </div> %>
+              <%= f.file_field :image, class:"input-default-image", id:"book_img" %>
+            </div>
 
             <div class="form-group">
               <div class='form-text-wrap'>
@@ -90,14 +90,14 @@
                 <label class="form-text">著者名</label>
                 <span class="indispensable">必須</span>
               </div>
-              <%= f.text_field :author, class:"input-default", id:"author", placeholder:"著者名を入力してください", autofocus: true %>
+              <%= f.text_field :author, class:"input-default", id:"author", placeholder:"著者名を入力してください" %>
             </div>
 
             <div class="form-group">
               <div class='form-text-wrap'>
                 <label class="form-text">出版年月日</label>
               </div>
-              <%= f.text_field :published_date, class:"input-default", id:"published_date", placeholder:"出版年月日を入力してください", autofocus: true %>
+              <%= f.text_field :published_date, class:"input-default", id:"published_date", placeholder:"出版年月日を入力してください" %>
             </div>
 
             <div class="form-group">

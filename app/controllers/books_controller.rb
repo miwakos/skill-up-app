@@ -2,7 +2,7 @@ class BooksController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :destroy]
 
   def index
-    @books = Book.all.includes(:user)
+    @books = Book.all.order("created_at DESC").includes(:user)
   end
 
   def new
