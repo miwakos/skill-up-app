@@ -162,9 +162,19 @@
 }
 
 .book-search-form {
-  width: 40%;
-  min-width: 350px;
+  width: 100%;
+  // min-width: 350px;
   // height: 750px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.book-search-form-left {
+  width: 35%;
+}
+
+.book-search-form-right {
+  width: 50%;
 }
 // 外部検索
 .book-registration-sub {
@@ -209,7 +219,7 @@
 }
 
 .book-form-wrap {
-  // height: 750px;
+  height: 90%;
   overflow-y: scroll;
 }
 
