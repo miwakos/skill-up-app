@@ -4,7 +4,7 @@
   height: 10%;
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
+  // justify-content: space-between;
   padding: 5vh 15vw;
   color: #fff;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
@@ -16,24 +16,22 @@
 
 .title-contents-right {
   width: 20%;
+  padding-left: 70px;
 }
 
 .create-btn-content {
-  width: 100%;
-  height: 10%;
-  padding: 1vh 1vw;
+  width: 70%;
 }
 
 .create-btn {
-  width: 150px;
-  height: 50px;
-  padding: 5px 0;
+  width: 130px;
+  padding: 2px 0;
   text-align: center;
   background-color: #ea5506;
   box-shadow:5px 5px 10px #696969;
   color: #fff;
   border-radius: 5px;
-  font-size: 14px;
+  font-size: 12px;
   cursor: pointer;
 }
 
@@ -47,14 +45,17 @@
   background-position: center center;
 }
 
-.book-contents {
+.book-contents-main {
   width: 100%;
-  height: 90%;
-  min-height: 90%;
+  height: 95%;
+  display: flex;
+  padding: 5vh 15vw;
+}
+
+.book-contents {
+  height: 95%;
   display: flex;
   justify-content: space-between;
-  padding: 5vh 15vw;
-  margin: 0;
   flex-wrap: wrap;
   overflow-y: scroll;
 }
@@ -62,9 +63,9 @@
 .book-content {
   width: 450px;
   min-width: 450px;
-  height: 250px;
+  height: 270px;
   min-height: 250px;
-  margin: 0 30px 20px 0;
+  margin: 5px 5px;
   padding: 15px 20px;
   background-color: rgba(255,255,255,0.8);;
   border-radius: 15px;
@@ -81,8 +82,18 @@
   text-decoration: underline;
 }
 
+.book-category{
+  height: 10%;
+  padding: 2px;
+  display: inline-block;
+  font-size: 12px;
+  color: palevioletred;
+  border: 1px solid palevioletred;
+  border-radius: 3px;
+}
+
 .book-content-center {
-  height: 80%;
+  height: 70%;
   display: flex;
 }
 
@@ -132,7 +143,7 @@
 
 .book-introduction {
   height: 60%;
-  padding-top: 12px;
+  padding-top: 10px;
   font-size: 12px;
   // はみ出た部分は3点リーダー（行数指定）
   display: -webkit-box;
@@ -161,9 +172,19 @@
 }
 
 .book-search-form {
-  width: 40%;
-  min-width: 350px;
+  width: 100%;
+  // min-width: 350px;
   // height: 750px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.book-search-form-left {
+  width: 35%;
+}
+
+.book-search-form-right {
+  width: 50%;
 }
 // 外部検索
 .book-registration-sub {
@@ -171,6 +192,9 @@
   padding-top: 5vh;
   display: flex;
   justify-content: center;
+}
+.book-registration-form {
+  height: 100%;
 }
 
 .book-form-wrap-search {
@@ -208,8 +232,13 @@
 }
 
 .book-form-wrap {
-  // height: 750px;
+  height: 90%;
   overflow-y: scroll;
+}
+
+.input-default-image {
+  margin-top: 5px;
+  font-size: 12px;
 }
 
 .input-default#book_introduction {

@@ -3,8 +3,9 @@
 <div class="back-img-library">
   <div class="bkRGBA-flex">
 
+    <div class="book-search-form">
       <%# 外部検索フォーム %>
-      <div class="book-search-form">
+      <div class="book-search-form-left">
         <%#= form_with(url: search_books_path, local: true, method: :get, class: 'book-registration-sub', id: 'book-registration-sub') do |f| %>
         <div class="book-registration-sub">
           <div class='book-form-wrap-search'>
@@ -54,72 +55,74 @@
             </div>
           </div>
         </div>
-
       </div>
 
       <%# 新規投稿フォーム %>
-      <%= form_with model: @book, url: books_path, class: 'registration-main book-registration-main', local: true do |f| %>
-        <div class='form-wrap book-form-wrap'>
-          <div class='form-header'>
-            <h2 class='form-header-text'>
-              図書カード新規記録
-            </h2>
-          </div>
+      <div class="book-search-form-right">
+        <%= form_with model: @book, url: books_path, class: 'book-registration-sub book-registration-form', local: true do |f| %>
+          <div class='form-wrap book-form-wrap'>
+            <div class='form-header'>
+              <h2 class='form-header-text'>
+                図書カード新規記録
+              </h2>
+            </div>
 
-          <%= render 'shared/error_messages', model: f.object %>
-          
-          <%# <div class="form-group">  
-            <div class='form-text-wrap'>
-              <label class="form-text">書籍画像</label>
-              <span class="indispensable">必須</span>
+            <%= render 'shared/error_messages', model: f.object %>
+            
+            <div class="form-group">  
+              <div class='form-text-wrap'>
+                <label class="form-text">書籍画像</label>
+                <span class="indispensable">必須</span>
+              </div>
+              <%= f.file_field :image, class:"input-default-image", id:"book_img" %>
             </div>
-            <%= f.text_field :book_img, class:"input-default", id:"book_img", placeholder:"", autofocus: true %>
-          <%# </div> %>
 
-          <div class="form-group">
-            <div class='form-text-wrap'>
-              <label class="form-text">書籍名</label>
-              <span class="indispensable">必須</span>
+            <div class="form-group">
+              <div class='form-text-wrap'>
+                <label class="form-text">書籍名</label>
+                <span class="indispensable">必須</span>
+              </div>
+              <%= f.text_field :book_title, class:"input-default", id:"book_title", placeholder:"書籍名を入力してください", autofocus: true %>
             </div>
-            <%= f.text_field :book_title, class:"input-default", id:"book_title", placeholder:"書籍名を入力してください", autofocus: true %>
-          </div>
 
-          <div class="form-group">
-            <div class='form-text-wrap'>
-              <label class="form-text">著者名</label>
-              <span class="indispensable">必須</span>
+            <div class="form-group">
+              <div class='form-text-wrap'>
+                <label class="form-text">著者名</label>
+                <span class="indispensable">必須</span>
+              </div>
+              <%= f.text_field :author, class:"input-default", id:"author", placeholder:"著者名を入力してください" %>
             </div>
-            <%= f.text_field :author, class:"input-default", id:"author", placeholder:"著者名を入力してください", autofocus: true %>
-          </div>
 
-          <div class="form-group">
-            <div class='form-text-wrap'>
-              <label class="form-text">出版年月日</label>
+            <div class="form-group">
+              <div class='form-text-wrap'>
+                <label class="form-text">出版年月日</label>
+              </div>
+              <%= f.text_field :published_date, class:"input-default", id:"published_date", placeholder:"出版年月日を入力してください" %>
             </div>
-            <%= f.text_field :published_date, class:"input-default", id:"published_date", placeholder:"出版年月日を入力してください", autofocus: true %>
-          </div>
 
-          <div class="form-group">
-            <div class='form-text-wrap'>
-              <label class="form-text">カテゴリー</label>
-              <span class="indispensable">必須</span>
+            <div class="form-group">
+              <div class='form-text-wrap'>
+                <label class="form-text">カテゴリー</label>
+                <span class="indispensable">必須</span>
+              </div>
+              <%= f.collection_select(:category_id, Category.all, :id, :name, {}, { class:"input-default", id:"category_id" }) %>
             </div>
-            <%= f.collection_select(:category_id, Category.all, :id, :name, {}, { class:"input-default", id:"category_id" }) %>
-          </div>
-          
-          <div class="form-group">
-            <div class='form-text-wrap'>
-              <label class="form-text">紹介文</label>
-              <span class="indispensable">必須</span>
+            
+            <div class="form-group">
+              <div class='form-text-wrap'>
+                <label class="form-text">紹介文</label>
+                <span class="indispensable">必須</span>
+              </div>
+              <%= f.text_area :book_introduction, class:"input-default", id:"book_introduction", placeholder:"書籍の紹介文を自由に書きましょう！" %>
             </div>
-            <%= f.text_area :book_introduction, class:"input-default", id:"book_introduction", placeholder:"書籍の紹介文を自由に書きましょう！" %>
+            
+            <div class='register-btn'>
+              <%= f.submit "登録する" ,class:"register-red-btn" %>
+            </div>
           </div>
-          
-          <div class='register-btn'>
-            <%= f.submit "登録する" ,class:"register-red-btn" %>
-          </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
+    </div>
 
   </div>
 </div>
