@@ -27,10 +27,10 @@
 ### <u>ログイン情報（テスト用）</u>
 ##### ※チャット用に2アカウント公開
 #### アカウント1
-- #### Email：testa@tast.com
+- #### Email：testa@test.com
 - #### Pass：test123
 #### アカウント2
-- #### Email：testb@tast.com
+- #### Email：testb@test.com
 - #### Pass：test123
 <br>
 <br>
