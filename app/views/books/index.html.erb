@@ -20,40 +20,44 @@
         </div>
       </div>
 
-      <div class="book-contents-main">
-        <ul class='book-contents'>
+      <div class='category-tags-content'>
+        <div class='category-tags'>
+          <ul class="category-tags-menu">
+            <li class="category-name active">すべて</li>
+            <% @categories.each do |category| %>
+              <li class="category-name"><%= category.name %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
 
-          <% @books.each do |book| %> <%# 投稿表示用 %>
-            <li class='book-content'>
-              <div class="book-post-user-name">
-                ［<%= book.created_at.month%>/<%= book.created_at.day %> <%= book.created_at.strftime('%R') %>］
-                <%= link_to '#', cass: "book-post-user-link" do %>
-                  <span><%= book.user.user_information.nickname %></span>
-                <% end %>
-                さんの図書カードより
-              </div>
-              <div class="book-category">
-                <%= book.category.name %>
-              </div>
-              <div class="book-content-center">
-                <div class="book-content-left">
-                  <div class="book-img-content">
-                    <%= image_tag book.image.variant(resize: '82x118'), class: 'book-img' %>
-                  </div>
-                </div>
-                <div class="book-content-right">
-                  <div class="book-title"><%= book.book_title %></div>
-                  <div class="book-author"><%= book.author %></div>
-                  <div class="book-introduction"><%= book.book_introduction %></div>
-                </div>
-              </div>
-              <%= link_to '#', cass: 'book-content-link' do %>
-                <div class="read-more">もっと読む ></div>
-              <% end %>
-            </li>
-          <% end %> <%# //投稿表示用 %>
-          
+      <div class="book-contents-main">
+
+        <%# 全ての書籍一覧 %>
+        <ul class='book-contents show'>
+          <%= render partial: 'book', collection: @books %>
         </ul>
+        <%# //全ての書籍一覧 %>
+        <%# カテゴリ別の書籍一覧 %>
+        <ul class='book-contents'><%= render partial: 'book', collection: @books1 %></ul>
+        <ul class='book-contents'><%= render partial: 'book', collection: @books2 %></ul>
+        <ul class='book-contents'><%= render partial: 'book', collection: @books3 %></ul>
+        <ul class='book-contents'><%= render partial: 'book', collection: @books4 %></ul>
+        <ul class='book-contents'><%= render partial: 'book', collection: @books5 %></ul>
+        <ul class='book-contents'><%= render partial: 'book', collection: @books6 %></ul>
+        <ul class='book-contents'><%= render partial: 'book', collection: @books7 %></ul>
+        <ul class='book-contents'><%= render partial: 'book', collection: @books8 %></ul>
+        <ul class='book-contents'><%= render partial: 'book', collection: @books9 %></ul>
+        <ul class='book-contents'><%= render partial: 'book', collection: @books10 %></ul>
+        <ul class='book-contents'><%= render partial: 'book', collection: @books11 %></ul>
+        <ul class='book-contents'><%= render partial: 'book', collection: @books12 %></ul>
+        <ul class='book-contents'><%= render partial: 'book', collection: @books13 %></ul>
+        <ul class='book-contents'><%= render partial: 'book', collection: @books14 %></ul>
+        <ul class='book-contents'><%= render partial: 'book', collection: @books15 %></ul>
+        <ul class='book-contents'><%= render partial: 'book', collection: @books16 %></ul>
+        <ul class='book-contents'><%= render partial: 'book', collection: @books17 %></ul>
+        <%# //カテゴリ別の書籍一覧 %>
+
       </div>
 
     </div>
