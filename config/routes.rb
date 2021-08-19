@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :books, only: [:index, :show, :new, :create, :destroy] do
     collection do
       get 'search'
+      get 'external_search'
     end
   end
   

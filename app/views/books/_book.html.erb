@@ -1,0 +1,27 @@
+<li class='book-content'>
+  <div class="book-post-user-name">
+    ［<%= book.created_at.month%>/<%= book.created_at.day %> <%= book.created_at.strftime('%R') %>］
+    <%= link_to '#', cass: "book-post-user-link" do %>
+      <span><%= book.user.user_information.nickname %></span>
+    <% end %>
+    さんの図書カードより
+  </div>
+  <div class="book-category">
+    <%= book.category.name %>
+  </div>
+  <div class="book-content-center">
+    <div class="book-content-left">
+      <div class="book-img-content">
+        <%= image_tag book.image.variant(resize: '82x118'), class: 'book-img' %>
+      </div>
+    </div>
+    <div class="book-content-right">
+      <div class="book-title"><%= book.book_title %></div>
+      <div class="book-author"><%= book.author %></div>
+      <div class="book-introduction"><%= book.book_introduction %></div>
+    </div>
+  </div>
+  <%= link_to '#', cass: 'book-content-link' do %>
+    <div class="read-more">もっと読む ></div>
+  <% end %>
+</li>

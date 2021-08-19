@@ -20,40 +20,144 @@
         </div>
       </div>
 
-      <div class="book-contents-main">
-        <ul class='book-contents'>
+      <div class='category-tags-content'>
+        <div class='category-tags'>
+          <ul class="category-tags-menu">
+            <li class="category-name active">すべて</li>
+            <% @categories.each do |category| %>
+              <li class="category-name"><%= category.name %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
 
-          <% @books.each do |book| %> <%# 投稿表示用 %>
-            <li class='book-content'>
-              <div class="book-post-user-name">
-                ［<%= book.created_at.month%>/<%= book.created_at.day %> <%= book.created_at.strftime('%R') %>］
-                <%= link_to '#', cass: "book-post-user-link" do %>
-                  <span><%= book.user.user_information.nickname %></span>
-                <% end %>
-                さんの図書カードより
-              </div>
-              <div class="book-category">
-                <%= book.category.name %>
-              </div>
-              <div class="book-content-center">
-                <div class="book-content-left">
-                  <div class="book-img-content">
-                    <%= image_tag book.image.variant(resize: '82x118'), class: 'book-img' %>
-                  </div>
-                </div>
-                <div class="book-content-right">
-                  <div class="book-title"><%= book.book_title %></div>
-                  <div class="book-author"><%= book.author %></div>
-                  <div class="book-introduction"><%= book.book_introduction %></div>
-                </div>
-              </div>
-              <%= link_to '#', cass: 'book-content-link' do %>
-                <div class="read-more">もっと読む ></div>
-              <% end %>
-            </li>
-          <% end %> <%# //投稿表示用 %>
-          
+      <div class="book-contents-main">
+
+        <%# 全ての書籍一覧 %>
+        <ul class='book-contents show'><%= render partial: 'book', collection: @books %></ul>
+        <%# //全ての書籍一覧 %>
+        <%# カテゴリ別の書籍一覧 %>
+        <ul class='book-contents'>
+          <% if @books1.present? %>
+            <%= render partial: 'book', collection: @books1 %>
+          <% else %>
+            対象カテゴリの書籍はありません
+          <% end %>
         </ul>
+        <ul class='book-contents'>  
+          <% if @books2.present? %>
+            <%= render partial: 'book', collection: @books2 %>
+          <% else %>
+            対象カテゴリの書籍はありません
+          <% end %>
+        </ul>
+        <ul class='book-contents'>
+          <% if @books3.present? %>
+            <%= render partial: 'book', collection: @books3 %>
+          <% else %>
+            対象カテゴリの書籍はありません
+          <% end %>
+        </ul>
+        <ul class='book-contents'>
+          <% if @books4.present? %>
+            <%= render partial: 'book', collection: @books4 %>
+          <% else %>
+            対象カテゴリの書籍はありません
+          <% end %>
+        </ul>
+        <ul class='book-contents'>
+          <% if @books5.present? %>
+            <%= render partial: 'book', collection: @books5 %>
+          <% else %>
+            対象カテゴリの書籍はありません
+          <% end %>
+        </ul>
+        <ul class='book-contents'>
+          <% if @books6.present? %>
+            <%= render partial: 'book', collection: @books6 %>
+          <% else %>
+            対象カテゴリの書籍はありません
+          <% end %>
+        </ul>
+        <ul class='book-contents'>
+          <% if @books7.present? %>
+            <%= render partial: 'book', collection: @books7 %>
+          <% else %>
+            対象カテゴリの書籍はありません
+          <% end %>
+        </ul>
+        <ul class='book-contents'>
+          <% if @books8.present? %>
+            <%= render partial: 'book', collection: @books8 %>
+          <% else %>
+            対象カテゴリの書籍はありません
+          <% end %>
+        </ul>
+        <ul class='book-contents'>
+          <% if @books9.present? %>
+            <%= render partial: 'book', collection: @books9 %>
+          <% else %>
+            対象カテゴリの書籍はありません
+          <% end %>
+        </ul>
+        <ul class='book-contents'>
+          <% if @books10.present? %>
+            <%= render partial: 'book', collection: @books10 %>
+          <% else %>
+            対象カテゴリの書籍はありません
+          <% end %>
+        </ul>
+        <ul class='book-contents'>
+          <% if @books11.present? %>
+            <%= render partial: 'book', collection: @books11 %>
+          <% else %>
+            対象カテゴリの書籍はありません
+          <% end %>
+        </ul>
+        <ul class='book-contents'>
+          <% if @books12.present? %>
+            <%= render partial: 'book', collection: @books12 %>
+          <% else %>
+            対象カテゴリの書籍はありません
+          <% end %>
+        </ul>
+        <ul class='book-contents'>
+          <% if @books13.present? %>
+            <%= render partial: 'book', collection: @books13 %>
+          <% else %>
+            対象カテゴリの書籍はありません
+          <% end %>
+        </ul>
+        <ul class='book-contents'>
+          <% if @books14.present? %>
+            <%= render partial: 'book', collection: @books14 %>
+          <% else %>
+            対象カテゴリの書籍はありません
+          <% end %>
+        </ul>
+        <ul class='book-contents'>
+          <% if @books15.present? %>
+            <%= render partial: 'book', collection: @books15 %>
+          <% else %>
+            対象カテゴリの書籍はありません
+          <% end %>
+        </ul>
+        <ul class='book-contents'>
+          <% if @books16.present? %>
+            <%= render partial: 'book', collection: @books16 %>
+          <% else %>
+            対象カテゴリの書籍はありません
+          <% end %>
+        </ul>
+        <ul class='book-contents'>
+          <% if @books17.present? %>
+            <%= render partial: 'book', collection: @books17 %>
+          <% else %>
+            対象カテゴリの書籍はありません
+          <% end %>
+        </ul>
+        <%# //カテゴリ別の書籍一覧 %>
+
       </div>
 
     </div>
