@@ -9,6 +9,7 @@ require("@rails/activestorage").start()
 require("../chat_scroll")
 require("../lounge_seat")
 require("../rws")
+require("../book_tags.js")
 require("channels")
 
 
