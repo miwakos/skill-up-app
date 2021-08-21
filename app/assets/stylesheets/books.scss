@@ -4,7 +4,6 @@
   height: 10%;
   display: flex;
   align-items: flex-start;
-  // justify-content: space-between;
   padding: 5vh 15vw;
   color: #fff;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
@@ -58,7 +57,7 @@
 .category-name {
   display: inline-block;
   margin-bottom: 2px;
-  padding: 1px 3px;
+  padding: 2px 4px;
   font-size: 14px;
   color: #EC008C;
   border: 1px solid #EC008C;
@@ -121,7 +120,7 @@
 
 .book-category{
   height: 10%;
-  padding: 2px;
+  padding: 2px 4px;
   display: inline-block;
   font-size: 12px;
   color: #EC008C;
@@ -159,6 +158,7 @@
   border-bottom: 1px solid #d3d3d3;
   box-shadow: 0px 5px 5px -5px #696969;
   font-size: 16px;
+  font-weight: bold;
   // はみ出た部分は3点リーダー（行数指定）
   display: -webkit-box;
   -webkit-line-clamp: 1;
@@ -225,7 +225,7 @@
 .book-search-form-right {
   width: 50%;
 }
-// 外部検索
+// 外部検索 new
 .book-registration-sub {
   width: 100%;
   padding-top: 5vh;
@@ -284,6 +284,92 @@
   height: 150px;
   padding-top: 5px;
 }
+
+// 書籍詳細 show
+.book-detail-content-main {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  padding: 3vh 15vw;
+}
+
+.book-detail-content-box {
+  height: 100%;
+  padding: 3vh 2vw;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255,255,255,0.8);;
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px #696969;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+}
+
+.book-detail-content {
+  width: 100%;
+  height: 100%;
+}
+
+.book-detail-post-user-name{
+  height: 5vh;
+  font-size: 14px;
+}
+.book-detail-post-user-name span {
+  color: blue;
+  text-decoration: underline;
+}
+
+.book-detail-category-box {
+  height: 5vh;
+}
+.book-detail-category{
+  padding: 2px 4px;
+  display: inline-block;
+  font-size: 14px;
+  color: #EC008C;
+  border: 1px solid #EC008C;
+  border-radius: 3px;
+}
+
+.book-detail-img-content {
+  width: 100%;
+  height: 25vh;
+  padding: 2vh 0;
+}
+
+.book-detail-img {
+  height: 100%;
+}
+
+.book-detail-title {
+  width: 90%;
+  height: 6vh;
+  display: flex;
+  align-items: flex-end;
+  border-bottom: 1px solid #d3d3d3;
+  box-shadow: 0px 5px 5px -5px #696969;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.book-detail-author {
+  width: 90%;
+  height: 6vh;
+  display: flex;
+  align-items: flex-end;
+  border-bottom: 1px solid #d3d3d3;
+  font-size: 14px;
+}
+
+.book-detail-introduction {
+  width: 100%;
+  padding: 3vh 0;
+  font-size: 16px;
+}
+
+
+
+
 
 
 /* メディア対応 */

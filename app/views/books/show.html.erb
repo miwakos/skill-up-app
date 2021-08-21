@@ -1,0 +1,52 @@
+<%= render "shared/header" %>
+
+<div class="back-img-library">
+  <div class="bkRGBA">
+    <div class='main'>
+
+
+      <div class='title-contents-flex'>
+        <div class="title-contents-left">
+          <h2 class='service-title'>
+            図書館
+          </h2>
+        </div>
+        <div class="title-contents-right">
+          <div class='create-btn-content'>
+            <%= link_to new_book_path, cass: 'create-btn', id: "create-btn" do %>
+                <div class="create-btn">新しく図書カードに<br>記録する</div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <div class="book-detail-content-main">
+        <div class='book-detail-content-box'>
+
+          <div class='book-detail-content'>
+            <div class="book-detail-post-user-name">
+              ［<%= @book.created_at.month%>/<%= @book.created_at.day %> <%= @book.created_at.strftime('%R') %>］
+              <%= link_to '#', cass: "book-detail-post-user-link" do %>
+                <span><%= @book.user.user_information.nickname %></span>
+              <% end %>
+              さんの図書カードより
+            </div>
+            <div class="book-detail-category-box">
+              <div class="book-detail-category"><%= @book.category.name %></div>
+            </div>
+            <div class="book-detail-img-content">
+              <%= image_tag @book.image.variant(resize: '82x118'), class: 'book-detail-img' %>
+            </div>
+            <div class="book-detail-title"><%= @book.book_title %></div>
+            <div class="book-detail-author"><%= @book.author %></div>
+            <div class="book-detail-introduction"><%= @book.book_introduction %></div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<%= render "shared/footer" %>
