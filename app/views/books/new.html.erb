@@ -5,8 +5,7 @@
 
     <div class="book-search-form">
       <%# 外部検索フォーム %>
-      <div class="book-search-form-left">
-        <%#= form_with(url: search_books_path, local: true, method: :get, class: 'book-registration-sub', id: 'book-registration-sub') do |f| %>
+      <%# <div class="book-search-form-left">
         <div class="book-registration-sub">
           <div class='book-form-wrap-search'>
             <div class='form-header'>
@@ -20,19 +19,16 @@
                 <label class="form-text">キーワード</label>
                 <span class="indispensable">必須</span>
               </div>
-              <%#= f.text_field :keyword, class:"input-default", id:"search_keyword", placeholder:"書籍名を入力してください" %>
               <input type="text" name="keyword", class="input-default", id="search_keyword", placeholder="書籍名を入力してください">
             </div>
             
             <div class='register-btn'>
               <input type="submit" name="commit" valuse="検索する" class="book-search-btn" id="book-search-btn" data-disable-with="検索する">
-              <%#= f.submit "検索する" ,class:"book-search-btn", id:"book-search-btn" %>
             </div>
           </div>
-        </div>
-        <%# end %>
+        </div> %>
 
-        <div class="book-registration-sub">
+        <%# <div class="book-registration-sub">
           <div class='book-form-wrap-search'>
             <div class='form-header'>
               <h2 class='form-header-text'>
@@ -43,19 +39,25 @@
               <div class="search-result">
                   <div class="search-result-img">画像URL</div>
                   <div class="search-result-title">書籍名</div>
-                  <div class="search-result-author">著者名</div>
-                <% if @books.present? %>
-                  <% @books.each do |book| %>
-                    <div class="search-result-img"><%= link_to image_tag("#{book.medium_image_url}"), book.item_url %></div>
-                    <div class="search-result-title"><%= book.title %></div>
-                    <div class="search-result-author"><%= book.author %></div>
-                  <% end %>
-                <% end %>
-              </div>
+                  <div class="search-result-author">著者名</div> %>
+                <%# if @books.present? %>
+                  <%# @books.each do |book| %>
+                    <%# <div class="search-result-img"> %>
+                      <%#= link_to image_tag("#{book.medium_image_url}"), book.item_url %>
+                    <%# </div> %>
+                    <%# <div class="search-result-title"> %>
+                      <%#= book.title %>
+                    <%# </div> %>
+                    <%# <div class="search-result-author"> %>
+                      <%#= book.author %>
+                    <%# </div> %>
+                  <%# end %>
+                <%# end %>
+              <%# </div>
             </div>
           </div>
         </div>
-      </div>
+      </div> %>
 
       <%# 新規投稿フォーム %>
       <div class="book-search-form-right">
