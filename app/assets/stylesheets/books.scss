@@ -310,7 +310,21 @@
   height: 100%;
 }
 
-.book-detail-post-user-name{
+.book-detail-edit {
+  height: 5vh;
+  margin-bottom: 1vh;
+}
+
+.book-detail-edit-btn {
+  padding: 1vh 2vw;
+  text-align: center;
+  background-color: #ea352d;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #FFF;
+}
+
+.book-detail-post-user-name {
   height: 5vh;
   font-size: 14px;
 }

@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :books_by_category, only: [:index]
+  before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   def index
     @categories = Category.all
@@ -20,7 +21,22 @@ class BooksController < ApplicationController
   end
 
   def show
-    @book = Book.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def update
+    if @book.update(book_params)
+      redirect_to book_path(@book.id)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @book.destroy
+    redirect_to books_path
   end
 
   def search
@@ -59,6 +75,10 @@ class BooksController < ApplicationController
     @books15 = Book.where(category_id: 15).order("created_at DESC").includes(:user)
     @books16 = Book.where(category_id: 16).order("created_at DESC").includes(:user)
     @books17 = Book.where(category_id: 17).order("created_at DESC").includes(:user)
+  end
+
+  def set_book
+    @book = Book.find(params[:id])
   end
 
 end

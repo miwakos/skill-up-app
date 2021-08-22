@@ -24,6 +24,13 @@
         <div class='book-detail-content-box'>
 
           <div class='book-detail-content'>
+            <% if user_signed_in? && @book.user_id == current_user.id %>
+              <div class="book-detail-edit">
+                <%= link_to '編集', edit_book_path(@book), class:"book-detail-edit-btn" %>
+                <%= link_to '削除', book_path(@book), method: :delete, class:"book-detail-edit-btn" %>
+              </div>
+            <% end %>
+
             <div class="book-detail-post-user-name">
               ［<%= @book.created_at.month%>/<%= @book.created_at.day %> <%= @book.created_at.strftime('%R') %>］
               <%= link_to '#', cass: "book-detail-post-user-link" do %>
