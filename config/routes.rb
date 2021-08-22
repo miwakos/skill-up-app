@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :lounges, only: [:index, :show, :destroy] do
     resources :chat_messages, only: [:create]
   end
-  resources :books, only: [:index, :show, :new, :create, :destroy] do
+  resources :books, only: [:index, :show, :new, :create, :edit, :destroy] do
     collection do
       get 'search'
       get 'external_search'
