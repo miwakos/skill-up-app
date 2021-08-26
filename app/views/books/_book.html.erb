@@ -1,7 +1,7 @@
 <li class='book-content'>
   <div class="book-post-user-name">
     ［<%= book.created_at.month%>/<%= book.created_at.day %> <%= book.created_at.strftime('%R') %>］
-    <%= link_to '#', cass: "book-post-user-link" do %>
+    <%= link_to user_path(book.user_id), cass: "book-post-user-link" do %>
       <span><%= book.user.user_information.nickname %></span>
     <% end %>
     さんの図書カードより

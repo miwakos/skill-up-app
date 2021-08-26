@@ -15,4 +15,17 @@ class User < ApplicationRecord
   has_many :passive_user_relationships, class_name: 'UserRelationship', foreign_key: 'follower_id', dependent: :destroy
   has_many :followers, through: :passive_user_relationships, source: :user
 
+  # フォロー機能関連のメソッド
+  def follow(other_user)
+    return if self == other_user
+    user_relationships.find_or_create_by!(follower: other_user)
+  end
+
+  def following?(user)
+    followings.include?(user)
+  end
+
+  def unfollow(user_relationships_id)
+    user_relationships.find(user_relationships_id).destroy!
+  end
 end
