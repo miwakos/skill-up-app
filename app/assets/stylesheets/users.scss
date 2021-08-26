@@ -33,6 +33,11 @@
   text-align: center;
   cursor: pointer;
 }
+.mypage-side-bar-lists .active {
+  font-weight: bold;
+  color: #FFF;
+  background-color: orange;
+}
 
 .mypage-main-contents-box {
   width: 83%;
@@ -42,6 +47,12 @@
   border-radius: 3px;
   box-shadow: 5px 5px 10px #696969;
 }
+
+// ユーザープロフィール
+.mypage-follow-btn {
+  cursor: pointer;
+}
+
 
 /* メディア対応 */
 @media (max-width: 1090px) { 
