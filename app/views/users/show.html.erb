@@ -6,7 +6,7 @@
 
       <div class='title-contents'>
         <h2 class='service-title'>
-          <%= current_user.user_information.nickname %>さんのマイルーム
+          <%= @user.user_information.nickname %>さんのマイルーム
         </h2>
       </div>
 
@@ -23,7 +23,7 @@
             <li class='mypage-side-bar-list'>ブックマーク</li>
             <li class='mypage-side-bar-list'>フォロー</li>
             <li class='mypage-side-bar-list'>フォロワー</li>
-            <% if user_signed_in? && current_user.id = @user.id %>  <%# current_userがおかしい %>  
+            <% if user_signed_in? && current_user.id == @user.id %>
               <li class='mypage-side-bar-list'>アカウント情報</li>
             <% end %>
           </ul>
@@ -42,8 +42,7 @@
               </div>
               <div class='mypage-nickname'><%= @user_information.nickname %></div>
               <div class='mypage-follow-btn-content'>
-                <%# if user_signed_in? && current_user.id != @user.id %>  <%# current_userがおかしい %>  
-                <% if user_signed_in? %>           
+                <% if user_signed_in? && current_user.id != @user.id %>
                   <% if current_user.following?(@user) %>
                     <%= button_to 'フォロー解除', user_relationship_path(current_user.user_relationships.find_by(follower: @user)), method: :delete, class: 'mypage-follow-btn'%>
                   <% else %>
