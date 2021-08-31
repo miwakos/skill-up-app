@@ -90,6 +90,12 @@ MySQL, SequelPro
 - has_many :chat_messages, dependent: :destroy
 - has_one  :lounge, through: :chat_entry
 - has_many :books, dependent: :nullify
+<!-- フォロー -->
+- has_many :user_relationships, dependent: :destroy
+- has_many :followings, through: :user_relationships, source: :follower
+<!-- フォロワー -->
+- has_many :passive_user_relationships, class_name: 'UserRelationship', foreign_key: 'follower_id', dependent: :destroy
+- has_many :followers, through: :passive_user_relationships, source: :user
 
 
 ## user_informations テーブル
@@ -107,6 +113,18 @@ MySQL, SequelPro
 
 - belongs_to :user
 - belongs_to :prefecture  <!-- Active Hash -->
+
+
+## user_relationships テーブル
+
+| Column      | Type       | Options                                        |
+| ----------- | ---------- | ---------------------------------------------- |
+| user_id     | references | null: false, foreign_key: true                 |
+| follower_id | references | null: false, foreign_key: { to_table: :users } |
+
+### Association
+- belongs_to :user
+- belongs_to :follower, class_name: 'User'
 
 
 ## categories テーブル

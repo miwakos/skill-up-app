@@ -1,0 +1,66 @@
+<%= render "shared/header" %>
+
+<div class="back-img-mypage">
+  <div class="bkRGBA">
+    <div class='main'>
+
+      <div class='title-contents'>
+        <h2 class='service-title'>
+          <%= @user.user_information.nickname %>さんのマイルーム
+        </h2>
+      </div>
+
+      <div class='mypage-contents'>
+
+        <div class='mypage-side-bar'>
+          <ul class='mypage-side-bar-lists'>
+            <li class='mypage-side-bar-list active'>プロフィール</li>
+            <li class='mypage-side-bar-list'>学習状況</li>
+            <li class='mypage-side-bar-list'>アウトプット</li>
+            <li class='mypage-side-bar-list'>書籍投稿</li>
+            <li class='mypage-side-bar-list'>相談投稿</li>
+            <li class='mypage-side-bar-list'>イベント参加</li>
+            <li class='mypage-side-bar-list'>ブックマーク</li>
+            <li class='mypage-side-bar-list'>フォロー</li>
+            <li class='mypage-side-bar-list'>フォロワー</li>
+            <% if user_signed_in? && current_user.id == @user.id %>
+              <li class='mypage-side-bar-list'>アカウント情報</li>
+            <% end %>
+          </ul>
+        </div>
+
+        <div class='mypage-main-contents-box'>
+          <div class='mypage-main-contents'>
+
+            <div class='mypage-main-content show'>
+              <div class='mypage-user-icom'>
+                <% if @user_information.user_icon == 'male' %>
+                  <%= image_tag('user-icon-male.png', class: 'user-icon-img', id: 'user-icon-img') %>
+                <% elsif @user_information.user_icon == 'female' %>
+                  <%= image_tag('user-icon-female.png', class: 'user-icon-img', id: 'user-icon-img') %>
+                <% end %>
+              </div>
+              <div class='mypage-nickname'><%= @user_information.nickname %></div>
+              <div class='mypage-follow-btn-content'>
+                <% if user_signed_in? && current_user.id != @user.id %>
+                  <% if current_user.following?(@user) %>
+                    <%= render 'user_relationships/unfollow_btn', user: @user %>
+                  <% else %>
+                    <%= render 'user_relationships/follow_btn', user: @user %>
+                  <% end %>
+                <% end %>
+              </div>
+              <div class='mypage-prefecture'><%= @user_information.prefecture.name %></div>
+              <div class='mypage-introduction'><%= @user_information.user_introduction %></div>
+            </div>
+
+          </div>
+        </div>
+      
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<%= render "shared/footer" %>
