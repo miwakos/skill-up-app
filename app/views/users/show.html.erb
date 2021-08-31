@@ -44,9 +44,9 @@
               <div class='mypage-follow-btn-content'>
                 <% if user_signed_in? && current_user.id != @user.id %>
                   <% if current_user.following?(@user) %>
-                    <%= button_to 'フォロー解除', user_relationship_path(current_user.user_relationships.find_by(follower: @user)), method: :delete, class: 'mypage-follow-btn'%>
+                    <%= render 'user_relationships/unfollow_btn', user: @user %>
                   <% else %>
-                    <%= button_to 'フォロー', user_relationships_path(follower: @user), class: 'mypage-follow-btn'%>
+                    <%= render 'user_relationships/follow_btn', user: @user %>
                   <% end %>
                 <% end %>
               </div>

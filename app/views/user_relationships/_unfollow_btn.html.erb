@@ -1,0 +1,1 @@
+<%= button_to 'フォロー解除', user_relationship_path(current_user.user_relationships.find_by(follower: user)), method: :delete, class: 'mypage-unfollow-btn btn'%>
